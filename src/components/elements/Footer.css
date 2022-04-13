@@ -1,0 +1,29 @@
+
+
+.container_transition{
+  position: fixed;
+height: 175px;
+bottom: 0;
+}
+
+
+.card_footer {
+  position: fixed;
+  width: 100%;
+  
+  bottom: 0;
+  height: 100px;
+  
+  transition: height .5s ease;
+
+}
+
+
+
+
+
+.card_footer.in.visible {
+
+  height: 800px;
+
+}

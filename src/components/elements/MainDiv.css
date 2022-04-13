@@ -1,0 +1,27 @@
+.container {
+  position: fixed;
+  top: 122px;
+  left: 200px;
+
+}
+
+
+.card {
+  border: 2px solid #7600dc;
+  width: 1px;
+  height: 1px;
+  /*  transform: translateY(15px); */
+  transition: all .5s ease;
+
+}
+
+.card.in.visible {
+  border: 2px solid #7600dc;
+  width: 1200px;
+  height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*   transform: translateY(0); */
+}
