@@ -3,20 +3,14 @@ import P2 from "../subcomponents/P2"
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
-  width: 700px;
+  width: 100vw;
   display: flex;
-  height: 75px;
-  flex-direction: row;
-  align-items: flex-end;
-  list-style-type: none;
-  position: fixed;
-  top: 35px;
-  right: 40px;
+  flex-direction: column;
  
   & > h1 {
     font-family: "StintUltraExpanded";
     color: ${({ theme }) => theme.headline};
-    
+    font-size: 1.25rem;
     transform: scaleY(1.5);
     letter-spacing: 0.2rem;
     font-weight: bold;

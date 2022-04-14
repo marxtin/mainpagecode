@@ -15,8 +15,6 @@ const Overlay = styled.div`
   height: 100%;
 `;
 const Text = styled.div`
-  /* background-color: black;
-  color: white; */
   background-color:${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   font-size: ${props=>props.fontSize};

@@ -19,7 +19,7 @@ const Div = styled.div`
 background: ${({ theme }) => theme.body}`
 
 const Footer = () => {
-  const { isTransitioned, setIsTransitioned } = useContext(Context);
+  const { isTransitioned, setIsTransitioned} = useContext(Context);
   const hasTransitionedIn = useMountTransition(isTransitioned, 500);
 
   return (

@@ -8,13 +8,16 @@ import styled from "styled-components";
 const InnerContainer = styled.div`
   width: 90%;
   height: 90%;
+  display: ${(props) => props.display};
+  flex-direction: ${(props) => props.flexDirection};
 `;
 const Div = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 50px;
+  flex-direction: ${(props) => props.itemsFlexDirection};
+  align-items: ${(props) => props.alignItems};
+  height: ${(props) => props.height};
   gap: 0.5rem;
+  margin-bottom: ${(props) => props.marginBottom};
 
   & > p {
     margin: 0;
@@ -25,16 +28,45 @@ const Div = styled.div`
     color: inherit;
 
     &:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
   }
 `;
-const Projects = () => {
-  const { opacity } = useContext(Context);
+
+const Line = styled.div`
+  width: 100vw;
+  height: 20px;
+  border-bottom: 1px solid ${({ theme }) => theme.text};
+`;
+const Projects = ({
+  display,
+  flexDirection,
+  itemsFlexDirection,
+  height,
+  marginBottom,
+  alignItems,
+}) => {
+  const { opacity, mobile } = useContext(Context);
 
   return (
-    <InnerContainer className={opacity ? "opacity" : "opacity_zero"}>
-      <Div>
+    <InnerContainer
+      display={display}
+      flexDirection={flexDirection}
+      className={opacity ? "opacity" : "opacity_zero"}
+    >
+      {mobile && (
+        <>
+          <ListItem>My Projects</ListItem>
+          <Line />
+          <br />
+        </>
+      )}
+      <Div
+        itemsFlexDirection={itemsFlexDirection}
+        height={height}
+        marginBottom={marginBottom}
+        alignItems={alignItems}
+      >
         <ListItem>
           <a
             href="https://marxtin.github.io/earth-o-quizz"
@@ -46,11 +78,25 @@ const Projects = () => {
         </ListItem>
         <P2>test your knowledge about planet earth</P2>
         <Info>created with React</Info>
-        <P2><a href="https://github.com/marxtin/quizzappcode"  rel="noreferrer"
-            target="_blank">see code</a></P2>
+        <P2>
+          <a
+            href="https://github.com/marxtin/quizzappcode"
+            rel="noreferrer"
+            target="_blank"
+          >
+            see code
+          </a>
+        </P2>
+        {mobile && <Line />}
       </Div>
-      <Div>
-      <ListItem>
+
+      <Div
+        itemsFlexDirection={itemsFlexDirection}
+        height={height}
+        marginBottom={marginBottom}
+        alignItems={alignItems}
+      >
+        <ListItem>
           <a
             href="https://marxtin.github.io/weatherApp"
             rel="noreferrer"
@@ -61,24 +107,53 @@ const Projects = () => {
         </ListItem>
         <P2>minimalistic design, with current + forecast</P2>
         <Info>created with TypeScript and React</Info>
-        <P2><a href="https://github.com/marxtin/weatherappcode"  rel="noreferrer"
-            target="_blank">see code</a></P2>
+        <P2>
+          <a
+            href="https://github.com/marxtin/weatherappcode"
+            rel="noreferrer"
+            target="_blank"
+          >
+            see code
+          </a>
+        </P2>{" "}
+        {mobile && <Line />}
       </Div>
-      <Div>
-        <ListItem> <a
+      <Div
+        itemsFlexDirection={itemsFlexDirection}
+        height={height}
+        marginBottom={marginBottom}
+        alignItems={alignItems}
+      >
+        <ListItem>
+          {" "}
+          <a
             href="https://marxtin.github.io/myPhotoBlog"
             rel="noreferrer"
             target="_blank"
           >
             Berlin Photo Blog
-          </a></ListItem>
+          </a>
+        </ListItem>
         <P2>photos by me and Robin</P2>
         <Info>created with React</Info>
-        <P2><a href="https://github.com/marxtin/photoblogcode"  rel="noreferrer"
-            target="_blank">see code</a></P2>
+        <P2>
+          <a
+            href="https://github.com/marxtin/photoblogcode"
+            rel="noreferrer"
+            target="_blank"
+          >
+            see code
+          </a>
+        </P2>{" "}
+        {mobile && <Line />}
       </Div>
-      <Div>
-      <ListItem>
+      <Div
+        itemsFlexDirection={itemsFlexDirection}
+        height={height}
+        marginBottom={marginBottom}
+        alignItems={alignItems}
+      >
+        <ListItem>
           <a
             href="https://marxtin.github.io/notesApp"
             rel="noreferrer"
@@ -89,11 +164,24 @@ const Projects = () => {
         </ListItem>
         <P2>with localStorage functionality</P2>
         <Info>created with React</Info>
-        <P2><a href="https://github.com/marxtin/noteappcode"  rel="noreferrer"
-            target="_blank">see code</a></P2>
+        <P2>
+          <a
+            href="https://github.com/marxtin/noteappcode"
+            rel="noreferrer"
+            target="_blank"
+          >
+            see code
+          </a>
+        </P2>{" "}
+        {mobile && <Line />}
       </Div>
-      <Div>
-      <ListItem>
+      <Div
+        itemsFlexDirection={itemsFlexDirection}
+        height={height}
+        marginBottom={marginBottom}
+        alignItems={alignItems}
+      >
+        <ListItem>
           <a
             href="https://marxtin.github.io/taskListApp"
             rel="noreferrer"
@@ -104,11 +192,24 @@ const Projects = () => {
         </ListItem>
         <P2>with localStorage functionality</P2>
         <Info>created with vanilla JavaScript</Info>
-        <P2><a href="https://github.com/marxtin/taskListApp"  rel="noreferrer"
-            target="_blank">see code</a></P2>
+        <P2>
+          <a
+            href="https://github.com/marxtin/taskListApp"
+            rel="noreferrer"
+            target="_blank"
+          >
+            see code
+          </a>
+        </P2>{" "}
+        {mobile && <Line />}
       </Div>
-      <Div>
-      <ListItem>
+      <Div
+        itemsFlexDirection={itemsFlexDirection}
+        height={height}
+        marginBottom={marginBottom}
+        alignItems={alignItems}
+      >
+        <ListItem>
           <a
             href="https://marxtin.github.io/mre"
             rel="noreferrer"
@@ -119,8 +220,16 @@ const Projects = () => {
         </ListItem>
         <P2>with HTML canvas</P2>
         <Info>created with vanilla JavaScript</Info>
-        <P2><a href="https://github.com/marxtin/mre"  rel="noreferrer"
-            target="_blank">see code</a></P2>
+        <P2>
+          <a
+            href="https://github.com/marxtin/mre"
+            rel="noreferrer"
+            target="_blank"
+          >
+            see code
+          </a>
+        </P2>{" "}
+        {mobile && <Line />}
       </Div>
     </InnerContainer>
   );

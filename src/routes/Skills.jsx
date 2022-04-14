@@ -1,17 +1,23 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
 import Context from "../context/Context";
-import Fog from "../components/special/Fog";
-import TextElem from "../components/elements/TextElem"
-
+import TextElem from "../components/elements/TextElem";
 
 const Skills = () => {
-  const { skillsText,learningText } = useContext(Context);
+  const { skillsText, learningText, mobile } = useContext(Context);
 
   return (
-   
-      <TextElem fontSize={"4rem"} textAlign={"left"}>
-          {skillsText}<hr/>currently learning:<br/>{learningText}
+    <TextElem fontSize={mobile ? "2rem" : "4rem"} textAlign={"left"}>
+      {mobile && (
+        <div>
+          <div>My Skills</div>
+          <br />
+        </div>
+      )}
+      {skillsText}
+      <hr />
+      currently learning:
+      <br />
+      {learningText}
     </TextElem>
   );
 };

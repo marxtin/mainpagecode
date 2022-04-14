@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
-import styled from "styled-components";
 import Context from "../context/Context";
-import Fog from "../components/special/Fog";
 import TextElem from "../components/elements/TextElem"
 
 
 const Home = () => {
-  const { homeText } = useContext(Context);
+  const { homeText, mobileText, mobile } = useContext(Context);
 
   return (
    
-      <TextElem fontSize={"4rem"} textAlign={"justify"}>
-          {homeText}
+      <TextElem fontSize={mobile? "2rem" : "4rem"} textAlign={"justify"}>
+          {mobile? mobileText : homeText}
     </TextElem>
   );
 };

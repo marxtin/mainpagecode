@@ -5,8 +5,6 @@ import { AiOutlineMail } from "react-icons/ai";
 import { AiOutlineGithub } from "react-icons/ai";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import { GrSolaris } from "react-icons/gr";
-import { GiPolarStar } from "react-icons/gi";
-import { GiAnkh } from "react-icons/gi";
 import { BsMoonStars } from "react-icons/bs";
 import Black from "../icons/Black";
 import Blue from "../icons/Blue";

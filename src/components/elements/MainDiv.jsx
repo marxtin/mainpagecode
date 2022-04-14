@@ -3,7 +3,7 @@ import Context from "../../context/Context";
 import useMountTransition from "../../hooks/useMountTransition";
 import "./MainDiv.css";
 const MainDiv = ({children}) => {
-    const {isMounted, mountedRef} = useContext(Context);
+    const {isMounted} = useContext(Context);
    
     const hasTransitionedIn = useMountTransition(isMounted, 500);
     
